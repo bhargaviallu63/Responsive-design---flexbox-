@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Responsive Design Assignment</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+    color:#333;
+    line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#0077cc,#00b4d8);
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+header h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:18px;
+}
+
+/* FLEXBOX NAVIGATION */
+
+nav{
+    background:#023e8a;
+    position:sticky;
+    top:0;
+}
+
+.nav-links{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    list-style:none;
+    padding:10px;
+}
+
+.nav-links li{
+    margin:10px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:5px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    background:white;
+    color:#023e8a;
+}
+
+/* MAIN CONTAINER */
+
+.container{
+    width:90%;
+    margin:30px auto;
+}
+
+/* CSS GRID */
+
+.grid-layout{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+/* CARD */
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+/* IMAGE */
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+    transition:0.3s;
+}
+
+.card img:hover{
+    opacity:0.9;
+}
+
+/* CONTENT */
+
+.card-content{
+    padding:20px;
+    text-align:center;
+}
+
+.card-content h2{
+    color:#0077cc;
+    margin-bottom:10px;
+}
+
+.card-content p{
+    margin-bottom:15px;
+}
+
+/* BUTTON */
+
+.btn{
+    display:inline-block;
+    padding:10px 18px;
+    background:#0077cc;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#023e8a;
+}
+
+/* FOOTER */
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* TABLET */
+
+@media (max-width:900px){
+
+    .grid-layout{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    header h1{
+        font-size:32px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width:600px){
+
+    .nav-links{
+        flex-direction:column;
+    }
+
+    .grid-layout{
+        grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:26px;
+    }
+
+    header p{
+        font-size:15px;
+    }
+
+    .card img{
+        height:200px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Responsive Web Design</h1>
+    <p>Using Media Queries, Flexbox & CSS Grid</p>
+</header>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <ul class="nav-links">
+        <li><a href="https://www.w3schools.com/" target="_blank">Home</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank">Flexbox</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout" target="_blank">Grid</a></li>
+        <li><a href="https://www.w3schools.com/css/css_rwd_intro.asp" target="_blank">Responsive</a></li>
+    </ul>
+</nav>
+
+<!-- MAIN CONTENT -->
+
+<div class="container">
+
+    <div class="grid-layout">
+
+        <!-- CARD 1 -->
+
+        <div class="card">
+
+            <a href="https://www.w3schools.com/html/" target="_blank">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Web Design">
+            </a>
+
+            <div class="card-content">
+                <h2>Web Design</h2>
+
+                <p>Create beautiful responsive websites using HTML and CSS.</p>
+
+                <a href="https://www.w3schools.com/html/" class="btn" target="_blank">
+                    Read More
+                </a>
+            </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="card">
+
+            <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank">
+                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4" alt="Flexbox">
+            </a>
+
+            <div class="card-content">
+                <h2>Flexbox</h2>
+
+                <p>Flexbox helps align webpage elements in a flexible way.</p>
+
+                <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox" class="btn" target="_blank">
+                    Read More
+                </a>
+            </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="card">
+
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout" target="_blank">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Grid">
+            </a>
+
+            <div class="card-content">
+                <h2>CSS Grid</h2>
+
+                <p>CSS Grid creates responsive rows and columns easily.</p>
+
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout" class="btn" target="_blank">
+                    Read More
+                </a>
+            </div>
+
+        </div>
+
+        <!-- CARD 4 -->
+
+        <div class="card">
+
+            <a href="https://www.w3schools.com/css/css_rwd_intro.asp" target="_blank">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Responsive">
+            </a>
+
+            <div class="card-content">
+                <h2>Responsive Design</h2>
+
+                <p>Media queries make websites work on all screen sizes.</p>
+
+                <a href="https://www.w3schools.com/css/css_rwd_intro.asp" class="btn" target="_blank">
+                    Read More
+                </a>
+            </div>
+
+        </div>
+
+        <!-- CARD 5 -->
+
+        <div class="card">
+
+            <a href="https://www.w3schools.com/css/" target="_blank">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="Modern UI">
+            </a>
+
+            <div class="card-content">
+                <h2>Modern UI</h2>
+
+                <p>Modern user interfaces improve user experience greatly.</p>
+
+                <a href="https://www.w3schools.com/css/" class="btn" target="_blank">
+                    Read More
+                </a>
+            </div>
+
+        </div>
+
+        <!-- CARD 6 -->
+
+        <div class="card">
+
+            <a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank">
+                <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931" alt="Technology">
+            </a>
+
+            <div class="card-content">
+                <h2>Creative Layout</h2>
+
+                <p>Combine Flexbox and Grid to build professional layouts.</p>
+
+                <a href="https://developer.mozilla.org/en-US/docs/Web" class="btn" target="_blank">
+                    Read More
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Responsive Design Assignment | HTML & CSS</p>
+</footer>
+
+</body>
+</html>
